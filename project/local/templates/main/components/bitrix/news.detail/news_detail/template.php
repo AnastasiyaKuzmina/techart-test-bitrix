@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <div class="structure">
-    <a class="structure__main" href="/news/">Главная</a>
+    <a class="structure__main" href="/news/list.php">Главная</a>
     <p class="structure__delimiter">/</p>
     <p class="structure__current"><?php echo $arResult["NAME"]; ?></p>
 </div>
@@ -32,7 +32,14 @@ $this->setFrameMode(true);
             <div class="news__description">
                 <p><?php echo $arResult["DETAIL_TEXT"]; ?></p>
             </div>
-            <a href="/list.php">
+			<div class="news__themes">
+				<?php foreach ($arResult["DISPLAY_PROPERTIES"]["THEMES"]["LINK_ELEMENT_VALUE"] as $arItem) : ?>
+					<div class="theme">
+						<p><?php echo $arItem["NAME"]; ?></p>
+					</div>
+				<?php endforeach; ?>
+			</div>
+            <a href="/news/list.php">
                 <div class="news__button" id="button">
                     <div class="news__button-content">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/Arrow.svg" data-active="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/WhiteArrow.svg" alt="" id="buttonImg">

@@ -2,6 +2,7 @@
 use Bitrix\Main\Page\Asset;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("TITLE", "Детали");
 
 $APPLICATION->SetTitle("Детали новости");
 
@@ -9,9 +10,9 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/news/detail.css")
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/detail.js");
 ?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"news_detail",
-	Array(
+	"bitrix:news.detail", 
+	"news_detail", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -35,7 +36,13 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/detail.js");
 		"DISPLAY_TOP_PAGER" => "N",
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["ID"],
-		"FIELD_CODE" => array(0=>"NAME",1=>"TAGS",2=>"DETAIL_TEXT",3=>"DETAIL_PICTURE",4=>"",),
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "TAGS",
+			2 => "DETAIL_TEXT",
+			3 => "DETAIL_PICTURE",
+			4 => "",
+		),
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "news",
 		"IBLOCK_URL" => "",
@@ -47,7 +54,10 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/detail.js");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array(0=>"",1=>"",),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "THEMES",
+		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -59,6 +69,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/detail.js");
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_PERMISSIONS" => "N",
 		"USE_SHARE" => "N"
-	)
+	),
+	false
 );?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
