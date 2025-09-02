@@ -1,0 +1,8 @@
+<?
+require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetTitle('Главная');
+?> 
+<a href="/list.php/" style="font-size: 64px; line-height: 160%; line-height: 1.4; font-weight: 600; color: #2C145E;">К новостям</a>
+<?
+require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
+?>
