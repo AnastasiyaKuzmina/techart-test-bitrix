@@ -12,17 +12,28 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true); 
 ?>
+
+<?
+$strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
+$strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
+?>
+
 <div class="news__navigation">
-    <?php for($p = 1; $p <= $arResult['NavPageCount']; $p++) :?>
-    <a href="/news/list.php?PAGEN_1=<?php echo $p; ?>/">
-        <div class="news__page" <?php if ($p == $arResult['NavPageNomer']) { ?>style="background-color: #841844;"<?php } ?>>
-            <p <?php if ($p == $arResult['NavPageNomer']) { ?>style="color: white;"<?php } ?>><?php echo $p; ?></p>
-        </div>
-    </a>
-    <?php endfor; ?>
-    <a href="/news/list.php?PAGEN_1=<?php echo $arResult['NavPageNomer'] + 1; ?>/">
+    <?while($arResult["nStartPage"] <= $arResult["nEndPage"]):?>
+        <a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?>">
+            <div class="news__page" <?php if ($arResult["nStartPage"] == $arResult['NavPageNomer']) { ?>style="background-color: #841844;"<?php } ?>>
+                <p <?php if ($arResult["nStartPage"] == $arResult['NavPageNomer']) { ?>style="color: white;"<?php } ?>><?= $arResult["nStartPage"]; ?></p>
+            </div>
+        </a>
+        <?$arResult["nStartPage"]++?>
+    <?endwhile?>
+    <a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult['NavPageNomer'] + 1?>">
         <div class="news__arrow" <?php if ($arResult['NavPageNomer'] == $arResult['NavPageCount']) {?>style="display: none;"<?php } ?>>
             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/PageArrow.svg" alt="">
         </div>
     </a>
 </div>
+
+
+
+

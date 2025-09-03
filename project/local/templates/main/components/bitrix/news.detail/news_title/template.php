@@ -12,9 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="image-part__block" style="background-image:url('<?= $arResult["ITEMS"][0]["DETAIL_PICTURE"]["SRC"]; ?>');">
-    <div class="image-part__text">
-        <h2><?= $arResult["ITEMS"][0]["NAME"]; ?></h2>
-        <p><?= $arResult["ITEMS"][0]["PREVIEW_TEXT"]; ?></p>
-    </div>
+<div class="news__header">
+    <h1><a class="header-link" href="/news/list.php">Новости</a> <?php if(isset($arResult["ID"])) { echo "на тему " . $arResult["NAME"]; }?></h1>
 </div>

@@ -37,7 +37,7 @@
     margin-bottom: 63px;
 }
 
-.news__item a{
+.news__link{
     width: 283px;
     height: 54px;
 }
@@ -71,22 +71,18 @@
 .news__themes {
     display: flex;
     flex-direction: row;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 5px;
     margin-bottom: 40px;
 }
 
-.theme {
-    display: flex;
-    background-color: #ECF2F5;
-    border-radius: 20px;
-    align-items: center;
-    justify-content: center;
+.news__themes a:not(:last-child):after {
+    content: ',';
 }
 
-.theme p{
-    padding: 5px 10px;
+.news__themes a {
     font-size: 16px;
+    line-height: 1.6;
     color: #6C6E7B;
 }
 

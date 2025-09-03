@@ -17,15 +17,15 @@ $this->setFrameMode(true);
         <?php foreach ($arResult["ITEMS"] as $arItem) : ?>
             <div class="news__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
                 <div class="news__date">
-                    <p><?php echo date('d.m.Y', strtotime($arItem['FIELDS']['TAGS'])); ?></p>
+                    <p><?= date('d.m.Y', strtotime($arItem['FIELDS']['TAGS'])); ?></p>
                 </div>
                 <div class="news__title">
-                    <h2><?php echo $arItem["NAME"]; ?></h2>
+                    <h2><?= $arItem["NAME"]; ?></h2>
                 </div>
                 <div class="news__description">
-                    <?php echo $arItem["PREVIEW_TEXT"]; ?>
+                    <?= $arItem["PREVIEW_TEXT"]; ?>
                 </div>
-                <a href="<?php echo $arItem["DETAIL_PAGE_URL"]; ?>">
+                <a href="<?= $arItem["DETAIL_PAGE_URL"]; ?>">
                     <div class="news__button">
                         <div class="news__button-content">
                             <p>Подробнее</p>

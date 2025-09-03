@@ -41,6 +41,11 @@
     flex-wrap: wrap;
 }
 
+.header-link {
+    display: inline;
+    color: black;
+}
+
 .news__item a{
     width: 216px;
     height: 54px;
