@@ -33,11 +33,16 @@ $this->setFrameMode(true);
                 <p><?= $arResult["DETAIL_TEXT"]; ?></p>
             </div>
 			<div class="news__themes">
-				<?php foreach ($arResult["DISPLAY_PROPERTIES"]["THEMES"]["LINK_ELEMENT_VALUE"] as $arItem) : ?>
-                    <a href="/news/list.php?theme=<?= $arItem["ID"]; ?>"><?= $arItem["NAME"]; ?></a>
-				<?php endforeach; ?>
+                <p>
+                    <?php $themes = $arResult["DISPLAY_PROPERTIES"]["THEMES"]["LINK_ELEMENT_VALUE"];
+                    $themesLinks = array_map (function($id, $name) {
+                        return "<a href=\"/news/?theme=" . $id . "\">" . $name . "</a>";
+                    }, array_column($themes, "ID"), array_column($themes, "NAME"));
+                    echo implode(', ', $themesLinks);
+                    ?> 
+                </p>
 			</div>
-            <a href="/news/list.php" class="news__link">
+            <a href="/news/" class="news__link">
                 <div class="news__button" id="button">
                     <div class="news__button-content">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/Arrow.svg" data-active="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/WhiteArrow.svg" alt="" id="buttonImg">

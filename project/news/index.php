@@ -3,12 +3,17 @@ use Bitrix\Main\Page\Asset;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("TITLE", "Новости");
-
 $APPLICATION->SetTitle("Список новостей"); 
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/news/list.css"); 
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/list.js"); 
-?><?$GLOBALS['arrFilter'] = array('PROPERTY_THEMES.ID' => $_GET['theme']);?> <?$APPLICATION->IncludeComponent(
+?>
+<?php
+if (isset($_GET['theme'])) {
+	$GLOBALS['arrFilter'] = array('PROPERTY_THEMES.ID' => $_GET['theme']);
+}
+?> 
+<?php $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"news_banner",
 	Array(
@@ -64,75 +69,97 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/list.js");
 		"SORT_ORDER2" => "",
 		"STRICT_SECTION_CHECK" => "N"
 	)
-);?><br>
+);
+?>
+<br>
 <div class="news">
-<? if(isset($_GET['theme'])) :?>  
-<?$APPLICATION->IncludeComponent(
-"bitrix:news.detail", 
-"news_title", 
-array(
-	"ACTIVE_DATE_FORMAT" => "d.m.Y",
-	"ADD_ELEMENT_CHAIN" => "N",
-	"ADD_SECTIONS_CHAIN" => "Y",
-	"AJAX_MODE" => "N",
-	"AJAX_OPTION_ADDITIONAL" => "",
-	"AJAX_OPTION_HISTORY" => "N",
-	"AJAX_OPTION_JUMP" => "N",
-	"AJAX_OPTION_STYLE" => "Y",
-	"BROWSER_TITLE" => "-",
-	"CACHE_GROUPS" => "Y",
-	"CACHE_TIME" => "36000000",
-	"CACHE_TYPE" => "A",
-	"CHECK_DATES" => "Y",
-	"DETAIL_URL" => "",
-	"DISPLAY_BOTTOM_PAGER" => "N",
-	"DISPLAY_DATE" => "Y",
-	"DISPLAY_NAME" => "Y",
-	"DISPLAY_PICTURE" => "Y",
-	"DISPLAY_PREVIEW_TEXT" => "Y",
-	"DISPLAY_TOP_PAGER" => "N",
-	"ELEMENT_CODE" => "",
-	"ELEMENT_ID" => $_GET["theme"],
-	"FIELD_CODE" => array(
-		0 => "NAME",
-		1 => "",
-	),
-	"IBLOCK_ID" => "3",
-	"IBLOCK_TYPE" => "news",
-	"IBLOCK_URL" => "",
-	"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-	"MESSAGE_404" => " ",
-	"META_DESCRIPTION" => "-",
-	"META_KEYWORDS" => "-",
-	"PAGER_BASE_LINK_ENABLE" => "N",
-	"PAGER_SHOW_ALL" => "N",
-	"PAGER_TEMPLATE" => ".default",
-	"PAGER_TITLE" => "Страница",
-	"PROPERTY_CODE" => array(
-		0 => "",
-		1 => "",
-	),
-	"SET_BROWSER_TITLE" => "Y",
-	"SET_CANONICAL_URL" => "N",
-	"SET_LAST_MODIFIED" => "N",
-	"SET_META_DESCRIPTION" => "Y",
-	"SET_META_KEYWORDS" => "Y",
-	"SET_STATUS_404" => "N",
-	"SET_TITLE" => "Y",
-	"SHOW_404" => "N",
-	"STRICT_SECTION_CHECK" => "N",
-	"USE_PERMISSIONS" => "N",
-	"USE_SHARE" => "N",
-	"COMPONENT_TEMPLATE" => "news_title"
+<?php if (isset($_GET['theme'])) :?>  
+<?php $APPLICATION->IncludeComponent(
+	"bitrix:news.detail", 
+	"news_title", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"ELEMENT_CODE" => "",
+		"ELEMENT_ID" => $_GET["theme"],
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "",
+		),
+		"IBLOCK_ID" => "3",
+		"IBLOCK_TYPE" => "news",
+		"IBLOCK_URL" => "",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"MESSAGE_404" => " ",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Страница",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_CANONICAL_URL" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"STRICT_SECTION_CHECK" => "N",
+		"USE_PERMISSIONS" => "N",
+		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "news_title"
 	),
 	false
-); ?><br>
-<? else :?>
+); 
+?><br>
+<?php else :?>
 <div class="news__header">
     <h1>Новости</h1>
 </div>
-<? endif; ?>
+<?php endif; ?>
 <?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"left_menu", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "left_menu"
+	),
+	false
+);?>
+<?php $APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"news_list", 
 	array(
@@ -199,6 +226,8 @@ array(
 		"STRICT_SECTION_CHECK" => "N"
 	),
 	false
-);?><br>
+);?>
+<br>
 </div>
- <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<br>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
