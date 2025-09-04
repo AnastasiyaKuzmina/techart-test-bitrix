@@ -1,12 +1,9 @@
-.header hr {
-    margin-bottom: 72px;
-}
-
 .structure {
     display: flex;
     font-size: 16px;
     flex-direction: row;
     gap: 5px;
+    margin-top: 72px;
 }
 
 .structure__main {

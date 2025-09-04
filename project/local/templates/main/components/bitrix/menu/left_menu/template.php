@@ -1,6 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
 <?if (!empty($arResult)):?>
+<hr>
 <nav class="left-menu">
 	<div class="left-menu__container">
 		<?php foreach($arResult as $arItem): ?>
