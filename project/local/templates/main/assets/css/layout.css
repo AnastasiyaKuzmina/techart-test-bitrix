@@ -75,6 +75,7 @@ h1,h2,h3,h4,h5,h6{
 
 a {
     display: block;
+    color: black;
 }
 
 h1{
@@ -189,7 +190,6 @@ hr {
     font-size: 16px;
     color: #6C6E7B;
 }
-
 
 .news__button {
     width: inherit;

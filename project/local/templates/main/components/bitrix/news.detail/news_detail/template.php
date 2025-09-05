@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <div class="structure">
-    <a class="structure__main" href="/news/list.php">Главная</a>
+    <a class="structure__main" href="/news/">Главная</a>
     <p class="structure__delimiter">/</p>
     <p class="structure__current"><?= $arResult["NAME"]; ?></p>
 </div>
