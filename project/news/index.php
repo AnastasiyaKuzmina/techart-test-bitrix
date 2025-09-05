@@ -10,7 +10,10 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/list.js");
 ?>
 <?php
 if (isset($_GET['theme'])) {
-	$GLOBALS['arrFilter'] = array('PROPERTY_THEMES.ID' => $_GET['theme']);
+	$GLOBALS['arrFilter']['PROPERTY_THEMES.ID'] = $_GET['theme'];
+}
+if (!$USER->IsAuthorized()) {
+	$GLOBALS['arrFilter']['!PROPERTY_HIDE_FROM_GUEST'] = 'Y';
 }
 ?> 
 <?php $APPLICATION->IncludeComponent(

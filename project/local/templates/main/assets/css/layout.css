@@ -107,6 +107,11 @@ hr {
     font-family: 'Open Sans', sans-serif;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
 .header__container {
     display: flex;
     flex-direction: row;
@@ -117,6 +122,23 @@ hr {
 .top-menu__container {
     display: flex;
     flex-direction: row;
+}
+
+.current-user__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.current-user__item {
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6C6E7B;
+}
+
+.user-name {
+    color: black;
 }
 
 .left-menu__container {

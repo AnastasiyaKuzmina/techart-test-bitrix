@@ -33,7 +33,7 @@ if($arResult["SHOW_SMS_FIELD"] == true)
 
 <?if($USER->IsAuthorized()):?>
 
-<p><?echo GetMessage("MAIN_REGISTER_AUTH")?></p>
+<h1><?echo GetMessage("MAIN_REGISTER_AUTH")?></h1>
 
 <?else:?>
 <?

@@ -27,25 +27,35 @@ use Bitrix\Main\Page\Asset;
 				<img class="header__logo" src="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/logo.svg" alt="">
 				<p>Галактический вестник</p>
 			</div>
-			<?php $APPLICATION->IncludeComponent(
-				"bitrix:menu", 
-				"top_menu", 
-				array(
-					"ALLOW_MULTI_SELECT" => "N",
-					"CHILD_MENU_TYPE" => "left",
-					"DELAY" => "N",
-					"MAX_LEVEL" => "2",
-					"MENU_CACHE_GET_VARS" => array(
+			<div class="header__right">
+				<?php $APPLICATION->IncludeComponent(
+					"bitrix:menu", 
+					"top_menu", 
+					array(
+						"ALLOW_MULTI_SELECT" => "N",
+						"CHILD_MENU_TYPE" => "left",
+						"DELAY" => "N",
+						"MAX_LEVEL" => "2",
+						"MENU_CACHE_GET_VARS" => array(
+						),
+						"MENU_CACHE_TIME" => "3600",
+						"MENU_CACHE_TYPE" => "N",
+						"MENU_CACHE_USE_GROUPS" => "Y",
+						"ROOT_MENU_TYPE" => "top",
+						"USE_EXT" => "Y",
+						"COMPONENT_TEMPLATE" => "top_menu"
 					),
-					"MENU_CACHE_TIME" => "3600",
-					"MENU_CACHE_TYPE" => "N",
-					"MENU_CACHE_USE_GROUPS" => "Y",
-					"ROOT_MENU_TYPE" => "top",
-					"USE_EXT" => "Y",
-					"COMPONENT_TEMPLATE" => "top_menu"
-				),
-				false
-			);?>
+					false
+				);?>
+				<?php if ($USER->IsAuthorized()) : ?>
+					<div class="current-user">
+						<div class="current-user__container">
+							<p class="current-user__item user-name"><?= $USER->GetFullName()?></p>
+							<a class="current-user__item" href="/?logout=yes&<?=bitrix_sessid_get()?>">Выйти</a>
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
 		</div>
 		<?php $APPLICATION->IncludeComponent(
 			"bitrix:menu", 
