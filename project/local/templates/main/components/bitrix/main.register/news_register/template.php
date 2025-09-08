@@ -114,7 +114,7 @@ if($arResult["BACKURL"] <> ''):
 <?
 endif;
 ?>
-<h1>Регистрация</h1>
+
 <table class="register-table">
 	<tbody>
 <?foreach ($arResult["SHOW_FIELDS"] as $FIELD):?>

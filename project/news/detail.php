@@ -2,8 +2,7 @@
 use Bitrix\Main\Page\Asset;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("TITLE", "Детали");
-
+$APPLICATION->SetPageProperty("TITLE", "Детали новости");
 $APPLICATION->SetTitle("Детали новости");
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/news/detail.css");

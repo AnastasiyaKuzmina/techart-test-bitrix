@@ -1,0 +1,11 @@
+.themes-list__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.themes-item {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #6C6E7B;
+}

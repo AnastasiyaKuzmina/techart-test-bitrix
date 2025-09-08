@@ -1,8 +1,9 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-$APPLICATION->SetPageProperty("TITLE", "Главная");
-$APPLICATION->SetTitle("Главная");
+$APPLICATION->SetPageProperty("TITLE", "Регистрация");
+$APPLICATION->SetTitle("Регистрация");
 ?>
+<h1><?$APPLICATION->ShowTitle()?></h1>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:main.register", 
 	"news_register", 

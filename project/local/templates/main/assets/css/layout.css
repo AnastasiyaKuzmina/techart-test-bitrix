@@ -122,6 +122,7 @@ hr {
 .top-menu__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .current-user__container {

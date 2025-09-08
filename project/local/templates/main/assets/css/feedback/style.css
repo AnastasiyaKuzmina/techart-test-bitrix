@@ -1,0 +1,44 @@
+div.mfeedback {
+    max-width: 800px;
+}
+
+.field-container {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.mf-field{
+    width: 60%;
+    height: 34px;
+    border-radius: 50px;
+    border: 2px solid #9B407A;
+    box-sizing: border-box;
+    padding: 0 10px;
+    background: fixed;
+}
+
+.message-field {
+    height: 100px;
+    border-radius: 10px;
+}
+
+.mf-text{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+div.mf-ok-text{
+    color:green;
+    font-weight:bold;
+    padding-bottom:1em
+}
+
+.btn_style {
+	font-size: 16px;
+	width: 100px;
+	height: 34px;
+	box-sizing: border-box;
+    border-radius: 50px;
+    border: 2px solid #9B407A;
+	background: fixed;
+}

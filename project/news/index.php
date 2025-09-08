@@ -3,7 +3,7 @@ use Bitrix\Main\Page\Asset;
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("TITLE", "Новости");
-$APPLICATION->SetTitle("Список новостей"); 
+$APPLICATION->SetTitle("Новости"); 
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/news/list.css"); 
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/news/list.js"); 
@@ -140,7 +140,7 @@ if (!$USER->IsAuthorized()) {
 ?><br>
 <?php else :?>
 <div class="news__header">
-    <h1>Новости</h1>
+    <h1><?$APPLICATION->ShowTitle()?></h1>
 </div>
 <?php endif; ?>
 <?php $APPLICATION->IncludeComponent(
@@ -160,7 +160,7 @@ if (!$USER->IsAuthorized()) {
 		"CACHE_TYPE" => "N",
 		"CHECK_DATES" => "Y",
 		"COMPONENT_TEMPLATE" => "news_list",
-		"DETAIL_URL" => "/news/detail.php?ID=#ELEMENT_ID#",
+		"DETAIL_URL" => "/news/#ELEMENT_ID#/",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
 		"DISPLAY_NAME" => "N",

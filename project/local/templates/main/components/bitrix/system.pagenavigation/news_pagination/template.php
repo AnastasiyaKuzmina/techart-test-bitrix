@@ -13,21 +13,24 @@
 $this->setFrameMode(true); 
 ?>
 
-<?
-$strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
-$strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
+<?php
+$theme = "";
+
+if (isset($_GET["theme"])) {
+    $theme = "/theme-" . $_GET["theme"];
+}
 ?>
 
 <div class="news__navigation">
     <?while($arResult["nStartPage"] <= $arResult["nEndPage"]):?>
-        <a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["nStartPage"]?>">
+        <a href="/news<?= $theme; ?>/page-<?=$arResult["nStartPage"]?>/">
             <div class="news__page" <?php if ($arResult["nStartPage"] == $arResult['NavPageNomer']) { ?>style="background-color: #841844;"<?php } ?>>
                 <p <?php if ($arResult["nStartPage"] == $arResult['NavPageNomer']) { ?>style="color: white;"<?php } ?>><?= $arResult["nStartPage"]; ?></p>
             </div>
         </a>
         <?$arResult["nStartPage"]++?>
     <?endwhile?>
-    <a href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult['NavPageNomer'] + 1?>">
+    <a href="/news<?= $theme; ?>/page-<?=$arResult['NavPageNomer'] + 1?>/">
         <div class="news__arrow" <?php if ($arResult['NavPageNomer'] == $arResult['NavPageCount']) {?>style="display: none;"<?php } ?>>
             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/icons/PageArrow.svg" alt="">
         </div>

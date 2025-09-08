@@ -18,8 +18,6 @@ if ($arResult['AUTHORIZED'])
 }
 ?>
 
-<h1 class="bx-title">Авторизация</h1>
-
 <div class="bx-authform">
 
 	<?if ($arResult['ERRORS']):?>

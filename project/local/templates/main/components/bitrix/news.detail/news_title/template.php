@@ -13,5 +13,5 @@
 $this->setFrameMode(true);
 ?>
 <div class="news__header">
-    <h1><a class="header-link" href="/news/list.php">Новости</a> на тему <?= $arResult["NAME"]; ?></h1>
+    <h1><a class="header-link" href="/news/">Новости</a> на тему <?= $arResult["NAME"]; ?></h1>
 </div>
