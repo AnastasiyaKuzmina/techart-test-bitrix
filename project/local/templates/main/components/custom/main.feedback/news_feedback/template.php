@@ -58,8 +58,8 @@ while($element = $result->GetNextElement())
 			<?=GetMessage("MFT_THEME")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("THEME", $arParams["REQUIRED_FIELDS"])):?><span class="mf-req">*</span><?endif?>
 		</div>
 		<select class="mf-field" name="theme" id="theme">
-			<?php foreach($themes as $theme): ?>
-				<option value="<?= $theme["NAME"]; ?>"><?= $theme["NAME"]; ?></option>
+			<?php foreach($arResult["THEMES"] as $theme): ?>
+				<option value="<?= $arResult["AUTHOR_THEME"] ?>"><?= $theme["NAME"]; ?></option>
 			<?php endforeach; ?>
 		</select>
 	</div>

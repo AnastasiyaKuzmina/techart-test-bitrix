@@ -5,7 +5,7 @@ $APPLICATION->SetPageProperty("TITLE", "Обратная связь");
 $APPLICATION->SetTitle("Обратная связь");
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/feedback/style.css"); 
 ?><h1><?$APPLICATION->ShowTitle()?></h1>
- <?$APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
 	"custom:main.feedback", 
 	"news_feedback", 
 	array(

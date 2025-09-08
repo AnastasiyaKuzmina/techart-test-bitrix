@@ -20,23 +20,6 @@ if(!empty($arResult["OK_MESSAGE"]))
 {
 	?><div class="mf-ok-text"><?=$arResult["OK_MESSAGE"]?></div><?
 }
-
-if (!CModule::IncludeModule('iblock')) {
-    return;
-}
-
-$IBLOCK_ID = $arParams["IBLOCK_ID"];
-
-$themes = [];
-$arSelect = Array("NAME");
-$arFilter = Array("IBLOCK_ID"=>$IBLOCK_ID, "ACTIVE"=>"Y");
-$result = CIBlockElement::GetList([], $arFilter, false, false, $arSelect);
-
-while($element = $result->GetNextElement())
-{
-	$arFields = $element->GetFields();
-	$themes[] = ['NAME' => $arFields['NAME']];
-}  
 ?>
 
 <form action="<?=POST_FORM_ACTION_URI?>" method="POST">
@@ -58,7 +41,7 @@ while($element = $result->GetNextElement())
 			<?=GetMessage("MFT_THEME")?><?if(empty($arParams["REQUIRED_FIELDS"]) || in_array("THEME", $arParams["REQUIRED_FIELDS"])):?><span class="mf-req">*</span><?endif?>
 		</div>
 		<select name="theme" id="theme">
-			<?php foreach($themes as $theme): ?>
+			<?php foreach($arResult["THEMES"] as $theme): ?>
 				<option value="<?= $theme["NAME"]; ?>"><?= $theme["NAME"]; ?></option>
 			<?php endforeach; ?>
 		</select>

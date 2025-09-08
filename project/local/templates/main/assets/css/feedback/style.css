@@ -10,6 +10,7 @@ div.mfeedback {
 .mf-field{
     width: 60%;
     height: 34px;
+    font-size: 16px;
     border-radius: 50px;
     border: 2px solid #9B407A;
     box-sizing: border-box;
@@ -20,11 +21,13 @@ div.mfeedback {
 .message-field {
     height: 100px;
     border-radius: 10px;
+    padding: 5px 10px;
 }
 
 .mf-text{
     font-size: 16px;
     margin-bottom: 5px;
+    color: #5a6c77;
 }
 
 div.mf-ok-text{
