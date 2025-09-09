@@ -1,0 +1,14 @@
+@use "style" as *;
+
+$block-name: "b-footer";
+
+.#{$block-name} {
+	height: 180px;
+	font-size: 20px;
+
+	hr {
+		border: 0.5px solid $color-gray;
+		width: 100%;
+		margin-bottom: 64px;
+	}
+}
