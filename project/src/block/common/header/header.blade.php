@@ -15,5 +15,5 @@
         </div>
     </div>
     {!! $leftMenu !!}
-    <hr>
+    <hr class="{{ $block->elem('line') }}">
 </div>
