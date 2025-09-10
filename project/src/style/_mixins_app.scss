@@ -1,1 +1,20 @@
 // Складируйте сюда все миксины, используемые на сайте
+@mixin button {
+	width: inherit;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border-radius: 50px;
+	border: 2px solid #9b407a;
+}
+
+@mixin button-text {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #9b407a;
+	margin-right: 10px;
+	text-decoration: none;
+	font-weight: 600;
+}

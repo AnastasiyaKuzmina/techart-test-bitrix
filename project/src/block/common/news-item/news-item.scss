@@ -47,22 +47,10 @@ $block-name: "b-news-item";
 	}
 
 	&__button-container {
-		width: inherit;
-		height: inherit;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		box-sizing: border-box;
-		border-radius: 50px;
-		border: 2px solid $color-purple;
+		@include button;
 	}
 
 	&__button-text {
-		font-size: 16px;
-		text-transform: uppercase;
-		color: $color-purple;
-		margin-right: 10px;
-		text-decoration: none;
-		font-weight: 600;
+		@include button-text;
 	}
 }
