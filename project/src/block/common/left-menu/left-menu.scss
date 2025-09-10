@@ -1,0 +1,29 @@
+@use "style" as *;
+
+$block-name: "b-left-menu";
+
+.#{$block-name} {
+	&__line {
+		border: $hr-border;
+		width: $hr-width;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 5px;
+	}
+
+	&__menu-item {
+		padding: 5px 10px;
+		font-size: 20px;
+		line-height: 1.6;
+		color: $color-gray;
+
+		&--selected {
+			color: $color-black;
+		}
+	}
+}

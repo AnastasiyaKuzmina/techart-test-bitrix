@@ -6,15 +6,20 @@ $color-black: #000;
 $color-purple: #9b407a;
 $color-title: #2c145e;
 $color-white: #fff;
+$color-beige: #ecf2f5;
 
 // Основные параметры body (если не используете, удаляйте)
 $body-background: $color-white;
+$tag-background: $color-beige;
 $body-text-color: $color-black;
 $body-font-family: "SegoeUI", sans-serif;
 
 // Настройки сетки (если не используете, удаляйте)
 $grid-columns: 12;
 $global-width: 1200px;
+
+$hr-border: 0.5px solid $color-gray;
+$hr-width: 100%;
 
 // Точки разрыва адаптивной вёрстки и их настройки
 $breakpoints: (

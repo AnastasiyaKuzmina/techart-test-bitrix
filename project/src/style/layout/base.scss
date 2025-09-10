@@ -16,6 +16,12 @@
 	border: 0;
 }
 
+a {
+	display: block;
+	text-decoration: none;
+	outline: none;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -29,4 +35,9 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+.wrapper {
+	width: 80%;
+	margin: auto;
 }

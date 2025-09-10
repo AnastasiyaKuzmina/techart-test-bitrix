@@ -1,0 +1,22 @@
+@use "style" as *;
+
+$block-name: "b-top-menu";
+
+.#{$block-name} {
+	&__container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	&__menu-item {
+		padding: 5px 10px;
+		font-size: 20px;
+		line-height: 1.6;
+		color: $color-gray;
+
+		&--selected {
+			color: $color-black;
+		}
+	}
+}

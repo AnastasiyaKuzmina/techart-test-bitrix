@@ -1,0 +1,13 @@
+@use "style" as *;
+
+$block-name: "b-title";
+
+.#{$block-name} {
+	&__header {
+		font-size: 64px;
+		line-height: 160%;
+		line-height: 1.4;
+		font-weight: 600;
+		color: black;
+	}
+}

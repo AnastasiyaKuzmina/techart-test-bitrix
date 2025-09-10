@@ -3,18 +3,14 @@
 $block-name: "b-header";
 
 .#{$block-name} {
-	display: flex;
-	flex-direction: column;
-
-	a {
-		display: block;
-		text-decoration: none;
-		outline: none;
+	&__container {
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__line {
-		border: 0.5px solid $color-gray;
-		width: 100%;
+		border: $hr-border;
+		width: $hr-width;
 	}
 
 	&__top-container {

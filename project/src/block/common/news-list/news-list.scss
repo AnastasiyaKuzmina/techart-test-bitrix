@@ -1,0 +1,17 @@
+@use "style" as *;
+
+$block-name: "b-news-list";
+
+.#{$block-name} {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		display: flex;
+		flex-basis: 48%;
+		margin-bottom: 82px;
+	}
+}

@@ -3,12 +3,14 @@
 $block-name: "b-footer";
 
 .#{$block-name} {
-	height: 180px;
-	font-size: 20px;
+	&__container {
+		height: 180px;
+		font-size: 20px;
+	}
 
 	&__line {
-		border: 0.5px solid $color-gray;
-		width: 100%;
+		border: $hr-border;
+		width: $hr-width;
 		margin-bottom: 64px;
 	}
 }
