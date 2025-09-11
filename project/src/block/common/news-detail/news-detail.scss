@@ -3,5 +3,72 @@
 $block-name: "b-news-detail";
 
 .#{$block-name} {
-	//
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 48%;
+	}
+
+	&__date {
+		@include date;
+
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		margin-bottom: 40px;
+		font-size: 32px;
+		font-weight: 600;
+		color: #841844;
+		line-height: 1.5;
+	}
+
+	&__description {
+		@include description;
+
+		p {
+			margin-bottom: 22px;
+		}
+	}
+
+	&__themes-container {
+		margin-bottom: 40px;
+
+		* {
+			display: inline;
+			font-size: 16px;
+			line-height: 1.6;
+			color: $color-gray;
+		}
+	}
+
+	&__button-link {
+		width: 283px;
+		height: 54px;
+	}
+
+	&__button-container {
+		@include button;
+	}
+
+	&__button-text {
+		@include button-text;
+	}
+
+	&__button-icon {
+		margin-right: 10px;
+		transform: scale(-1, 1);
+	}
+
+	&__image {
+		flex-basis: 48%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
 }

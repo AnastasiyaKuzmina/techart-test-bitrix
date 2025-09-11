@@ -16,16 +16,9 @@ $block-name: "b-news-item";
 	}
 
 	&__date {
+		@include date;
+
 		margin-bottom: 30px;
-		display: flex;
-		background-color: $tag-background;
-		border-radius: 20px;
-		width: 118px;
-		height: 34px;
-		align-items: center;
-		justify-content: center;
-		font-size: 16px;
-		color: $color-gray;
 	}
 
 	&__title {
@@ -35,10 +28,9 @@ $block-name: "b-news-item";
 	}
 
 	&__description {
+		@include description;
+
 		margin-bottom: 30px;
-		flex-grow: 1;
-		font-size: 20px;
-		line-height: 1.6;
 	}
 
 	&__button-link {

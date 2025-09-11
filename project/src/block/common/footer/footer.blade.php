@@ -1,3 +1,4 @@
+</div>
 <div class="{{ $block }} wrapper">
     <div class="{{ $block->elem('container') }}">
         <hr class="{{ $block->elem('line') }}">

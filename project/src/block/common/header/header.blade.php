@@ -19,3 +19,4 @@
         <hr class="{{ $block->elem('line') }}" @if((preg_match('#/news/([\D][\S]*)?$#', $routeName))) style="display: none;" @endif>
     </div>
 </div>
+<div class="b-layout">

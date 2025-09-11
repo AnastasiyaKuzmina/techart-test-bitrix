@@ -1,0 +1,27 @@
+@use "style" as *;
+
+$block-name: "b-news-breadcrumb";
+
+.#{$block-name} {
+	&__container {
+		display: flex;
+		font-size: 16px;
+		flex-direction: row;
+		gap: 5px;
+		margin-top: 60px;
+	}
+
+	&__delimeter {
+		color: $color-light-gray;
+	}
+
+	&__element {
+		&--current {
+			color: $color-gray;
+		}
+	}
+
+	&__element-link {
+		color: $color-light-gray;
+	}
+}

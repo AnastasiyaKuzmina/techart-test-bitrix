@@ -1,17 +1,12 @@
-<div class="{{ $block }}">
+<div class="{{ $block }} wrapper">
     <div class="{{ $block->elem('container') }}">
         <div class="{{ $block->elem('info') }}">
             <p class="{{ $block->elem('date') }}">{{ date('d.m.Y', strtotime($arResult["FIELDS"]["TAGS"])) }}</p>
-            <h2 class="{{ $block->elem('title') }}">{{ $arResult['PREVIEW_TEXT'] }}</h2>
-            <p class="{{ $block->elem('description') }}">{{ $arResult['DETAIL_TEXT'] }}</p>
+            <h2 class="{{ $block->elem('title') }}">{{ strip_tags($arResult["PREVIEW_TEXT"]) }}</h2>
+            <div class="{{ $block->elem('description') }}">{!! $arResult['DETAIL_TEXT'] !!}</div>
             <div class="{{ $block->elem('themes-container') }}">
                 <p class="{{ $block->elem('theme') }}">
-                    <?php $themes = $arResult["DISPLAY_PROPERTIES"]["THEMES"]["LINK_ELEMENT_VALUE"];
-                    $themesLinks = array_map (function($id, $name) {
-                        return "<a href=\"/news/theme-" . $id . "/\">" . $name . "</a>";
-                    }, array_column($themes, "ID"), array_column($themes, "NAME"));
-                    echo implode(', ', $themesLinks);
-                    ?> 
+                    {!! $arResult['THEMES'] !!}
                 </p>
             </div>
             <a class="{{ $block->elem('button-link') }}" href="/news/">
