@@ -1,3 +1,5 @@
+@use "config" as *;
+
 // Складируйте сюда все миксины, используемые на сайте
 @mixin button {
 	width: inherit;
@@ -7,13 +9,13 @@
 	justify-content: center;
 	box-sizing: border-box;
 	border-radius: 50px;
-	border: 2px solid #9b407a;
+	border: 2px solid $color-purple;
 }
 
 @mixin button-text {
 	font-size: 16px;
 	text-transform: uppercase;
-	color: #9b407a;
+	color: $color-purple;
 	margin-right: 10px;
 	text-decoration: none;
 	font-weight: 600;
@@ -21,14 +23,14 @@
 
 @mixin date {
 	display: flex;
-	background-color: #ecf2f5;
+	background-color: $tag-background;
 	border-radius: 20px;
 	width: 118px;
 	height: 34px;
 	align-items: center;
 	justify-content: center;
 	font-size: 16px;
-	color: #6c6e7b;
+	color: $color-gray;
 }
 
 @mixin description {
