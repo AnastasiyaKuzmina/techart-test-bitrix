@@ -16,6 +16,17 @@ use Bitrix\Main\ModuleManager;
 $this->setFrameMode(true);
 $this->addExternalCss("/bitrix/css/main/bootstrap.css");
 
+if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] === 'Y')
+{
+	$basketAction = $arParams['COMMON_ADD_TO_BASKET_ACTION'] ?? '';
+}
+else
+{
+	$basketAction = $arParams['SECTION_ADD_TO_BASKET_ACTION'] ?? '';
+}
+?>
+
+<?
 $intSectionID = $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
 	"books_catalog",
@@ -145,5 +156,9 @@ $intSectionID = $APPLICATION->IncludeComponent(
 	),
 	$component
 );
+?>
 
+<?
 $GLOBALS['CATALOG_CURRENT_SECTION_ID'] = $intSectionID;
+unset($basketAction);
+?>
