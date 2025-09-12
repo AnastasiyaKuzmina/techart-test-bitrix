@@ -1,6 +1,6 @@
 <div class="{{ $block }}">
     <div class="{{ $block->elem('container') }}">
-        <a class="{{ $block->elem('link') }}" href="{{ $item['DETAIL_PAGE_URL'] }}" title="<?=$imgTitle?>">
+        <a class="{{ $block->elem('link') }}" href="{!! $item['DETAIL_PAGE_URL'] !!}" title="<?=$imgTitle?>">
             <img class="{{ $block->elem('image') }}" src="{{ $item['PREVIEW_PICTURE']['SRC'] }}" alt="">
             <p class="{{ $block->elem('title') }}">{{ $item['NAME'] }}</p>
         </a>

@@ -159,58 +159,15 @@ $arParams['MESS_RELATIVE_QUANTITY_FEW'] = $arParams['MESS_RELATIVE_QUANTITY_FEW'
 
 ?>
 
-<?=$arResult['NAME'];?>
-
-<div id="<?=$itemIds['ID']?>" itemscope itemtype="http://schema.org/Product">
-
-	<div id="<?=$itemIds['BIG_SLIDER_ID']?>">
-		<img src="<?=$arResult['DETAIL_PICTURE']['SRC']?>" alt="">
-	</div>
-					
-	<?php
-	foreach ($arParams['PRODUCT_INFO_BLOCK_ORDER'] as $blockName)
-	{
-		switch ($blockName)
-		{
-			case 'props':
-				if (!empty($arResult['DISPLAY_PROPERTIES']) || $arResult['SHOW_OFFERS_PROPS'])
-				{
-					?>
-						<?php
-						if (!empty($arResult['DISPLAY_PROPERTIES']))
-						{
-							?>
-							<dl>
-								<?php
-								foreach ($arResult['DISPLAY_PROPERTIES'] as $property)
-								{
-									if (isset($arParams['MAIN_BLOCK_PROPERTY_CODE'][$property['CODE']]))
-									{
-										?>
-										<dt><?=$property['NAME']?></dt>
-										<dd><?=(is_array($property['DISPLAY_VALUE'])
-												? implode(' / ', $property['DISPLAY_VALUE'])
-												: $property['DISPLAY_VALUE'])?>
-										</dd>
-										<?php
-									}
-								}
-								unset($property);
-								?>
-							</dl>
-							<?php
-						}
-						?>
-					<?php
-				}
-				break;
-		}
-	}
-	?>
-
-</div>
-
-<?=$arResult['DETAIL_TEXT'];?>
+<?=
+	\TAO::frontend()->renderBlock(
+		'common/catalog-element', [
+			'arResult' => $arResult,
+			'arParams' => $arParams,
+			'itemIds' => $itemIds
+			]
+	)
+?>
 
 <meta itemprop="name" content="<?=$name?>" />
 <meta itemprop="category" content="<?=$arResult['CATEGORY_PATH']?>" />

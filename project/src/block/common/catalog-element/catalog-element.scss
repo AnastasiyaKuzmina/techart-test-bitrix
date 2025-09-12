@@ -1,0 +1,41 @@
+@use "style" as *;
+
+$block-name: "b-catalog-element";
+
+.#{$block-name} {
+	&__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&__left-side {
+		width: 30%;
+	}
+
+	&__slider {
+		width: 80%;
+		margin: auto;
+	}
+
+	&__right-side {
+		width: 70%;
+		font-size: 20px;
+	}
+
+	&__right-side-container {
+		width: 80%;
+		margin: auto;
+	}
+
+	&__property {
+		display: flex;
+		flex-direction: row;
+		gap: 5px;
+		font-size: 20px;
+	}
+
+	&__property-name {
+		font-weight: 600;
+	}
+}
