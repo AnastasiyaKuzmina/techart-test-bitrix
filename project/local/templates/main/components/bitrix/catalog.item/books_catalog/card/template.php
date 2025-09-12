@@ -30,50 +30,11 @@ use Bitrix\Main\Localization\Loc;
  */
 ?>
 
-<a href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>">
-	<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="">
-	<?=$item['NAME']?>
-</a>
-
-<?
-if (!empty($arParams['PRODUCT_BLOCKS_ORDER']))
-{
-	foreach ($arParams['PRODUCT_BLOCKS_ORDER'] as $blockName)
-	{
-		switch ($blockName)
-		{
-			case 'price': ?>
-				<?=$price['PRINT_RATIO_PRICE'];?>
-				<?
-				break;
-
-			case 'props':
-				if (!$haveOffers)
-				{
-					if (!empty($item['DISPLAY_PROPERTIES']))
-					{
-						?>
-						<dl>
-							<?
-							foreach ($item['DISPLAY_PROPERTIES'] as $code => $displayProperty)
-							{
-								?>
-								<dt>
-									<?=$displayProperty['NAME']?>
-								</dt>
-								<dd>
-									<?=(is_array($displayProperty['DISPLAY_VALUE'])
-										? implode(' / ', $displayProperty['DISPLAY_VALUE'])
-										: $displayProperty['DISPLAY_VALUE'])?>
-								</dd>
-								<?
-							}
-							?>
-						</dl>
-						<?
-					}
-				}
-				break;
-		}
-	}
-}
+<?=
+	\TAO::frontend()->renderBlock(
+		'common/catalog-item', [
+			'arParams' => $arParams,
+			'item' => $item
+			]
+	)
+?>

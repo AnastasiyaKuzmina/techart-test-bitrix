@@ -208,42 +208,6 @@ $arParams['MESS_RELATIVE_QUANTITY_FEW'] = $arParams['MESS_RELATIVE_QUANTITY_FEW'
 	}
 	?>
 
-	<?php
-	foreach ($arParams['PRODUCT_PAY_BLOCK_ORDER'] as $blockName)
-	{
-		switch ($blockName)
-		{
-			case 'price':
-				?>
-					<div id="<?=$itemIds['PRICE_ID']?>">
-						<?=$price['PRINT_RATIO_PRICE']?>
-					</div>
-				<?php
-				break;
-
-			case 'buttons':
-				?>
-				<div data-entity="main-button-container">
-					<div id="<?=$itemIds['BASKET_ACTIONS_ID']?>">
-						<?php
-						if ($showAddBtn)
-						{
-							?>
-							<a class="btn <?=$showButtonClassName?> product-item-detail-buy-button" id="<?=$itemIds['ADD_BASKET_LINK']?>"
-								href="javascript:void(0);">
-								<span><?=$arParams['MESS_BTN_ADD_TO_BASKET']?></span>
-							</a>
-							<?php
-						}
-						?>
-					</div>
-				</div>
-				<?php
-				break;
-		}
-	}
-	?>
-
 </div>
 
 <?=$arResult['DETAIL_TEXT'];?>

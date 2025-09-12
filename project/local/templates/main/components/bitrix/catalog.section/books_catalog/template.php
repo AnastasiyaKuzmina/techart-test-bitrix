@@ -24,6 +24,7 @@ use Bitrix\Catalog\ProductTable;
 
 $this->setFrameMode(true);
 $this->addExternalCss('/bitrix/css/main/bootstrap.css');
+$this->addExternalCss('/local/templates/main/components/bitrix/catalog.section/books_catalog/style.scss');
 
 if (!empty($arResult['NAV_RESULT']))
 {
@@ -120,11 +121,12 @@ $obName = 'ob'.preg_replace('/[^a-zA-Z0-9_]/', 'x', $this->GetEditAreaId($navPar
 $containerName = 'container-'.$navParams['NavNum'];
 ?>
 
-<div data-entity="<?=$containerName?>">
-	<?
-	if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
-	{
-		$generalParams = [
+<?
+$catalogItems = [];
+
+if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
+{
+	$generalParams = [
 			'SHOW_DISCOUNT_PERCENT' => $arParams['SHOW_DISCOUNT_PERCENT'],
 			'PRODUCT_DISPLAY_MODE' => $arParams['PRODUCT_DISPLAY_MODE'],
 			'SHOW_MAX_QUANTITY' => $arParams['SHOW_MAX_QUANTITY'],
@@ -164,109 +166,75 @@ $containerName = 'container-'.$navParams['NavNum'];
 			'MESS_BTN_ADD_TO_BASKET' => $arParams['~MESS_BTN_ADD_TO_BASKET'],
 		];
 
-		$areaIds = [];
-		$itemParameters = [];
+	$areaIds = [];
+	$itemParameters = [];
 
-		foreach ($arResult['ITEMS'] as $item)
-		{
-			$uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
-			$areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
-			$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
-			$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
-
-			$itemParameters[$item['ID']] = [
-				'SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']],
-				'MESS_NOT_AVAILABLE' => ($arResult['MODULES']['catalog'] && $item['PRODUCT']['TYPE'] === ProductTable::TYPE_SERVICE
-					? $arParams['~MESS_NOT_AVAILABLE_SERVICE']
-					: $arParams['~MESS_NOT_AVAILABLE']
-				),
-			];
-		}
-		?>
-		<!-- items-container -->
-		<?
-		foreach ($arResult['ITEM_ROWS'] as $rowData)
-		{
-			$rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
-			?>
-			<div data-entity="items-row">
-				<?
-				switch ($rowData['VARIANT'])
-				{
-					case 2:
-						foreach ($rowItems as $item)
-						{
-							?>
-							<div class="col-sm-4 product-item-big-card">
-								<div class="row">
-									<div class="col-md-12">
-										<?
-										$APPLICATION->IncludeComponent(
-											'bitrix:catalog.item',
-											'books_catalog',
-											array(
-												'RESULT' => array(
-													'ITEM' => $item,
-													'AREA_ID' => $areaIds[$item['ID']],
-													'TYPE' => $rowData['TYPE'],
-													'BIG_LABEL' => 'N',
-													'BIG_DISCOUNT_PERCENT' => 'N',
-													'BIG_BUTTONS' => 'Y',
-													'SCALABLE' => 'N'
-												),
-												'PARAMS' => $generalParams + $itemParameters[$item['ID']],
-											),
-											$component,
-											array('HIDE_ICONS' => 'Y')
-										);
-										?>
-									</div>
-								</div>
-							</div>
-							<?
-						}
-						break;
-				}
-				?>
-			</div>
-			<?
-		}
-		unset($rowItems);
-
-		unset($itemParameters);
-		unset($areaIds);
-
-		unset($generalParams);
-		?>
-		<!-- items-container -->
-		<?
-	}
-	else
+	foreach ($arResult['ITEMS'] as $item)
 	{
-		// load css for bigData/deferred load
-		$APPLICATION->IncludeComponent(
-			'bitrix:catalog.item',
-			'',
-			array(),
-			$component,
-			array('HIDE_ICONS' => 'Y')
-		);
+		$uniqueId = $item['ID'].'_'.md5($this->randString().$component->getAction());
+		$areaIds[$item['ID']] = $this->GetEditAreaId($uniqueId);
+		$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
+		$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
+
+		$itemParameters[$item['ID']] = [
+			'SKU_PROPS' => $arResult['SKU_PROPS'][$item['IBLOCK_ID']],
+			'MESS_NOT_AVAILABLE' => ($arResult['MODULES']['catalog'] && $item['PRODUCT']['TYPE'] === ProductTable::TYPE_SERVICE
+				? $arParams['~MESS_NOT_AVAILABLE_SERVICE']
+				: $arParams['~MESS_NOT_AVAILABLE']
+			),
+		];
 	}
-	?>
-</div>
-<?
-if ($showLazyLoad)
-{
-	?>
-	<div class="row bx-<?=$arParams['TEMPLATE_THEME']?>">
-		<div class="btn btn-default btn-lg center-block" style="margin: 15px;"
-			data-use="show-more-<?=$navParams['NavNum']?>">
-			<?=$arParams['MESS_BTN_LAZY_LOAD']?>
-		</div>
-	</div>
-	<?
+
+	foreach ($arResult['ITEM_ROWS'] as $rowData)
+	{
+		switch ($rowData['VARIANT'])
+		{
+			case 3:
+				foreach (array_splice($arResult['ITEMS'], 0, $rowData['COUNT']) as $item)
+				{
+					ob_start();
+					$APPLICATION->IncludeComponent(
+						'bitrix:catalog.item',
+						'books_catalog',
+						array(
+							'RESULT' => array(
+								'ITEM' => $item,
+								'AREA_ID' => $areaIds[$item['ID']],
+								'TYPE' => $rowData['TYPE'],
+								'BIG_LABEL' => 'N',
+								'BIG_DISCOUNT_PERCENT' => 'N',
+								'BIG_BUTTONS' => 'Y',
+								'SCALABLE' => 'N'
+							),
+							'PARAMS' => $generalParams + $itemParameters[$item['ID']],
+						),
+						$component,
+						array('HIDE_ICONS' => 'Y')
+					);
+					$catalogItems[] = ob_get_clean();
+				}
+				break;
+			}
+	}
 }
 
+unset($rowItems);
+unset($itemParameters);
+unset($areaIds);
+unset($generalParams);
+?>
+
+<?=
+	\TAO::frontend()->renderBlock(
+		'common/catalog-section', [
+			'arResult' => $arResult,
+			'items' => $catalogItems,
+			'containerName' => $containerName
+			]
+	)
+?>
+
+<?
 if ($showBottomPager)
 {
 	?>

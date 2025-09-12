@@ -1,0 +1,42 @@
+@use "style" as *;
+
+$block-name: "b-catalog-item";
+
+.#{$block-name} {
+	&__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+		&:last-child {
+			justify-self: end;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: 600;
+		color: $color-purple;
+	}
+
+	&__properties {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__property {
+		display: flex;
+		flex-direction: row;
+		gap: 5px;
+		font-size: 16px;
+	}
+
+	&__property-name {
+		font-weight: 600;
+	}
+}
