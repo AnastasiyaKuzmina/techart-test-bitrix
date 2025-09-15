@@ -1,8 +1,13 @@
 <div class="{{ $block }} wrapper">
-    <div class="{{ $block->elem('container') }}" id="{{ $itemIds['ID'] }}">
+
+    <div class="{{ $block->elem('container') }} bx-catalog-element" id="{{ $itemIds['ID'] }}">
         <div class="{{ $block->elem('left-side') }}">
-            <div class="{{ $block->elem('slider') }}" id="{{ $itemIds['BIG_SLIDER_ID'] }}">
-                <img class="{{ $block->elem('image') }}" src="{{ $arResult['DETAIL_PICTURE']['SRC'] }}" alt="">
+            <div class="product-item-detail-slider-container" id="{{$itemIds['BIG_SLIDER_ID']}}">
+                <div class="product-item-detail-slider-images-container" data-entity="images-container">
+                    <div class="{{ $block->elem('slider') }} product-item-detail-slider-image" data-entity="image">
+                        <img class="{{ $block->elem('image') }}" src="{{ $arResult['DETAIL_PICTURE']['SRC'] }}" alt="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="{{ $block->elem('right-side') }}">

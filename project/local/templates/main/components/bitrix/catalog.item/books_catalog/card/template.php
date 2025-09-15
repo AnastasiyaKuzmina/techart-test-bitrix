@@ -34,7 +34,9 @@ use Bitrix\Main\Localization\Loc;
 	\TAO::frontend()->renderBlock(
 		'common/catalog-item', [
 			'arParams' => $arParams,
-			'item' => $item
+			'item' => $item,
+			'itemIds' => $itemIds,
+			'areaId' => $areaId
 			]
 	)
 ?>

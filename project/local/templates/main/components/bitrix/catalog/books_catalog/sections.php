@@ -14,7 +14,6 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
 
 $intSectionID = $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",

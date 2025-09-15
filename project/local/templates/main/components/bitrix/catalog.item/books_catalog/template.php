@@ -20,7 +20,6 @@ use Bitrix\Main;
 
 $this->setFrameMode(true);
 
-
 if (isset($arResult['ITEM']))
 {
 	$item = $arResult['ITEM'];
@@ -313,6 +312,7 @@ if (isset($arResult['ITEM']))
 			var <?=$obName?> = new JCCatalogItem(<?=CUtil::PhpToJSObject($jsParams, false, true)?>);
 		</script>
 	</div>
+
 	<?php
 	unset($item, $actualItem, $minOffer, $itemIds, $jsParams);
 }

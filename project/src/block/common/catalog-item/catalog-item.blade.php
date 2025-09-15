@@ -1,9 +1,10 @@
 <div class="{{ $block }}">
-    <div class="{{ $block->elem('container') }}">
-        <a class="{{ $block->elem('link') }}" href="{!! $item['DETAIL_PAGE_URL'] !!}" title="<?=$imgTitle?>">
-            <img class="{{ $block->elem('image') }}" src="{{ $item['PREVIEW_PICTURE']['SRC'] }}" alt="">
-            <p class="{{ $block->elem('title') }}">{{ $item['NAME'] }}</p>
+    <div class="product-item">
+        <a class="{{ $block->elem('link') }} product-item-image-wrapper" href="{!! $item['DETAIL_PAGE_URL'] !!}" title="{{$imgTitle}}" data-entity="image-wrapper">
+            <img class="{{ $block->elem('image') }} product-item-image-original" src="{{ $item['PREVIEW_PICTURE']['SRC'] }}" alt="" id="{{$itemIds['PICT']}}">
+            <img class="{{ $block->elem('image') }} product-item-image-alternative" src="{{ $item['PREVIEW_PICTURE']['SRC'] }}" alt="" id="{{$itemIds['SECOND_PICT']}}">
         </a>
+        <p class="{{ $block->elem('title') }} product-item-title">{{ $item['NAME'] }}</p>
         @if (!empty($arParams['PRODUCT_BLOCKS_ORDER']))
             @foreach ($arParams['PRODUCT_BLOCKS_ORDER'] as $blockName)
                 @switch($blockName)
@@ -28,3 +29,4 @@
         @endif
     </div>
 </div>
+ 
