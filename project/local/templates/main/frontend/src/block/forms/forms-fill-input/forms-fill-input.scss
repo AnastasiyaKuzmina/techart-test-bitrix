@@ -1,0 +1,21 @@
+@use "style" as *;
+
+$block-name: "b-forms-fill-input";
+
+.#{$block-name} {
+	&__container {
+		@include field-container;
+	}
+
+	&__text {
+		@include field-text;
+	}
+
+	&__field {
+		@include field;
+
+		height: 34px;
+		border-radius: 50px;
+		padding: 0 10px;
+	}
+}

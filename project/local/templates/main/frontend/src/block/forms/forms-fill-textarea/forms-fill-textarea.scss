@@ -1,0 +1,21 @@
+@use "style" as *;
+
+$block-name: "b-forms-fill-textarea";
+
+.#{$block-name} {
+	&__container {
+		@include field-container;
+	}
+
+	&__text {
+		@include field-text;
+	}
+
+	&__field {
+		@include field;
+
+		height: 100px;
+		border-radius: 10px;
+		padding: 5px 10px;
+	}
+}

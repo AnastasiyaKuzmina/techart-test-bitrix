@@ -24,6 +24,24 @@
                             </div>
                         @endif
                         @break
+                    @case('price')
+                        @if (!empty($price))
+                            <div class="{{ $block->elem('price') }}" id="{{$itemIds['PRICE']}}">
+                                <p class="{{ $block->elem('price-value') }}">{!! $price['PRINT_RATIO_PRICE'] !!}</p>
+                            </div>
+                        @endif
+                        @break
+                    @case('buttons')
+                        <div class="{{ $block->elem('buttons') }} product-item-info-container product-item-hidden" data-entity="buttons-block">
+                            @if ($actualItem['CAN_BUY'])
+                                <div class="{{ $block->elem('button-container')->mod('basket') }} product-item-button-container" id="{{$itemIds['BASKET_ACTIONS']}}">
+                                    <a class="{{ $block->elem('button-link')->mod('basket') }} btn btn-default {{$buttonSizeClass}}" id="{{ $itemIds['BUY_LINK'] }}" href="javascript:void(0)" rel="nofollow">
+                                        {{ ($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET']) }}
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
+                        @break
                 @endswitch
             @endforeach
         @endif

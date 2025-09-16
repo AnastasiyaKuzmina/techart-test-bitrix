@@ -1,0 +1,17 @@
+@use "style" as *;
+
+$block-name: "b-forms-fill-button";
+
+.#{$block-name} {
+	&__container {
+		@include field-container;
+	}
+
+	&__field {
+		@include field;
+
+		width: 100px;
+		height: 34px;
+		border-radius: 50px;
+	}
+}

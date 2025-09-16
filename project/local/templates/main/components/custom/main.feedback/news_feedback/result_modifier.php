@@ -18,3 +18,43 @@ while($element = $result->GetNextElement())
 }  
 
 $arResult["THEMES"] = $themes;
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-input', [
+		'name' => "NAME",
+		'type' => "text",
+		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'arResult' => $arResult,
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-input', [
+		'name' => "EMAIL",
+		'type' => "email",
+		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'arResult' => $arResult,
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-select', [
+		'name' => "THEME",
+		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'arResult' => $arResult,
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-textarea', [
+		'name' => "MESSAGE",
+		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'arResult' => $arResult,
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-button', [
+		'name' => "SUBMIT",
+		]
+);

@@ -38,3 +38,22 @@
 	font-size: 20px;
 	line-height: 1.6;
 }
+
+@mixin field-container {
+	width: 80%;
+	margin-bottom: 10px;
+}
+
+@mixin field-text {
+	font-size: 16px;
+	margin-bottom: 5px;
+	color: $color-gray;
+}
+
+@mixin field {
+	width: 60%;
+	font-size: 16px;
+	border: 2px solid $color-purple;
+	box-sizing: border-box;
+	background: fixed;
+}
