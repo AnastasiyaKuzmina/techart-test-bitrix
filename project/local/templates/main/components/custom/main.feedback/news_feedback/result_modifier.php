@@ -54,6 +54,13 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
 );
 
 $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-checkbox', [
+		'name' => "AGREEMENT",
+		'text' => "Ознакомлен с условиями",
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-button', [
 		'name' => "SUBMIT",
 		]

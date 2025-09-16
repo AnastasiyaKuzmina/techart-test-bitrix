@@ -3,5 +3,19 @@
 $block-name: "b-forms-form";
 
 .#{$block-name} {
-	//
+	&__container {
+		max-width: 800px;
+	}
+
+	&__ok-message {
+		color: green;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	&__error-message {
+		color: red;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
 }

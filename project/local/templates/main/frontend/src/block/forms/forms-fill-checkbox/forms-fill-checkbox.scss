@@ -3,5 +3,11 @@
 $block-name: "b-forms-fill-checkbox";
 
 .#{$block-name} {
-	//
+	&__container {
+		@include field-container;
+	}
+
+	&__text {
+		@include field-text;
+	}
 }
