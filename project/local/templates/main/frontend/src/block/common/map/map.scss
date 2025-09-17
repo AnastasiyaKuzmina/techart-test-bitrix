@@ -1,0 +1,9 @@
+@use "style" as *;
+
+$block-name: "b-map";
+
+.#{$block-name} {
+	&__container {
+		height: 50vh;
+	}
+}
