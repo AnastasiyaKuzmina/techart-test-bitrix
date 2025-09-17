@@ -1,19 +1,9 @@
 <div class="{{ $block }} wrapper">
     <div class="{{ $block->elem('container') }}">
-        @if(!empty($arResult["ERROR_MESSAGE"]))
-            @foreach($arResult["ERROR_MESSAGE"] as $v)
-                <div class="{{ $block->elem('error-message') }}">
-                    {{ ShowError($v) }}
-                </div>
-            @endforeach
-        @endif
-        @if(!empty($arResult["OK_MESSAGE"]))
-            <div class="{{ $block->elem('ok-message') }}">
-                {{$arResult["OK_MESSAGE"]}}
-            </div>
-        @endif
+        <div class="{{ $block->elem('error-messages') }}" id="error-messages"></div>
+        <p class="{{ $block->elem('ok-message') }}" id="ok-message"></p>
 
-        <form class="{{ $block->elem('form') }}" action="{{ POST_FORM_ACTION_URI }}" method="POST">
+        <form class="{{ $block->elem('form') }}" action="{{ POST_FORM_ACTION_URI }}" method="POST" id="feedbackForm">
             {!! bitrix_sessid_post() !!}
 
             @foreach($renders as $render)

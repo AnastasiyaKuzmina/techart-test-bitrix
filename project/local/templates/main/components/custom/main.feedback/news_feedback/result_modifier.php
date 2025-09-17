@@ -23,7 +23,7 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-input', [
 		'name' => "NAME",
 		'type' => "text",
-		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'isRequired' => empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"]),
 		'arResult' => $arResult,
 		]
 );
@@ -32,7 +32,18 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-input', [
 		'name' => "EMAIL",
 		'type' => "email",
-		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'group' => 'group',
+		'isRequired' => empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"]),
+		'arResult' => $arResult,
+		]
+);
+
+$arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
+    'forms/forms-fill-input', [
+		'name' => "PHONE",
+		'type' => "tel",
+		'group' => 'group',
+		'isRequired' => empty($arParams["REQUIRED_FIELDS"]) || in_array("PHONE", $arParams["REQUIRED_FIELDS"]),
 		'arResult' => $arResult,
 		]
 );
@@ -40,7 +51,7 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
 $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-select', [
 		'name' => "THEME",
-		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'isRequired' => empty($arParams["REQUIRED_FIELDS"]) || in_array("THEME", $arParams["REQUIRED_FIELDS"]),
 		'arResult' => $arResult,
 		]
 );
@@ -48,7 +59,7 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
 $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-textarea', [
 		'name' => "MESSAGE",
-		'requiredFields' => $arParams["REQUIRED_FIELDS"],
+		'isRequired' => empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"]),
 		'arResult' => $arResult,
 		]
 );
@@ -63,5 +74,6 @@ $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
 $arResult["RENDERS"][] = \TAO::frontend()->renderBlock(
     'forms/forms-fill-button', [
 		'name' => "SUBMIT",
+		'arResult' => $arResult,
 		]
 );
