@@ -1,3 +1,10 @@
+import Inputmask from "inputmask/dist/inputmask.es6.js";
+
+var phoneField = document.querySelector('input[type="tel"]');
+
+var phoneMask = new Inputmask("+7-(999)-999-99-99");
+phoneMask.mask(phoneField);
+
 const form = document.getElementById('feedbackForm');
 
 form.addEventListener('submit', function validate(event) {

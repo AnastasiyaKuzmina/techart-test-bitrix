@@ -5,5 +5,42 @@ $block-name: "b-map";
 .#{$block-name} {
 	&__container {
 		height: 50vh;
+		margin-bottom: 20px;
 	}
+
+	&__description {
+		font-size: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__marker {
+		width: 30px;
+		height: 30px;
+		border-radius: 50px;
+		background-color: red;
+	}
+
+	&__popup {
+		@include button;
+
+		width: 300px;
+		height: auto;
+		border-radius: 5px;
+		background-color: white;
+		position: absolute;
+		top: 35px;
+		left: 30px;
+		z-index: 1000;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 5px;
+		font-size: 16px;
+	}
+}
+
+.hidden {
+	display: none;
 }
