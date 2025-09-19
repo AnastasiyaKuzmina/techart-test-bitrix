@@ -36,7 +36,10 @@ use Bitrix\Main\Localization\Loc;
 			'arParams' => $arParams,
 			'item' => $item,
 			'itemIds' => $itemIds,
-			'areaId' => $areaId
+			'areaId' => $areaId,
+			'price' => $price,
+			'actualItem' => $actualItem,
+			'buttonSizeClass' => $buttonSizeClass
 			]
 	)
 ?>

@@ -222,7 +222,10 @@ $jsParams = array(
 		'common/catalog-element', [
 			'arResult' => $arResult,
 			'arParams' => $arParams,
-			'itemIds' => $itemIds
+			'itemIds' => $itemIds,
+			'price' => $price,
+			'actualItem' => $actualItem,
+			'buttonSizeClass' => $buttonSizeClass
 			]
 	)
 ?>

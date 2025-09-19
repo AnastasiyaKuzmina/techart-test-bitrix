@@ -1,0 +1,875 @@
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style/layout/base.scss ***!
+  \*******************************************************************************************************************************************************************************************/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  outline: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background-color: #fff;
+  color: #000;
+  font-family: "SegoeUI", sans-serif;
+}
+
+.b-layout {
+  margin-bottom: 70px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/catalog-element/catalog-element.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+.b-catalog-element__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.b-catalog-element__left-side {
+  width: 30%;
+}
+.b-catalog-element__slider {
+  height: 300px;
+  margin: auto;
+}
+.b-catalog-element__details {
+  margin-bottom: 10px;
+}
+.b-catalog-element__right-side {
+  width: 70%;
+  font-size: 20px;
+}
+.b-catalog-element__right-side-container {
+  width: 80%;
+  margin: auto;
+}
+.b-catalog-element__property {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-size: 20px;
+}
+.b-catalog-element__property-name {
+  font-weight: 600;
+}
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/catalog-item/catalog-item.scss ***!
+  \****************************************************************************************************************************************************************************************************************/
+.b-catalog-item__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.b-catalog-item__container:last-child {
+  justify-self: end;
+}
+.b-catalog-item__image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.b-catalog-item__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #9b407a;
+}
+.b-catalog-item__properties {
+  display: flex;
+  flex-direction: column;
+}
+.b-catalog-item__property {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-size: 16px;
+}
+.b-catalog-item__property-name {
+  font-weight: 600;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/catalog-section/catalog-section.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+.b-catalog-section__container {
+  display: flex;
+  flex-direction: column;
+}
+.b-catalog-section__row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 7%;
+  margin-bottom: 10px;
+}
+.b-catalog-section__item {
+  width: 20%;
+}
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/footer/footer.scss ***!
+  \****************************************************************************************************************************************************************************************************/
+.b-footer__container {
+  height: 180px;
+  font-size: 20px;
+}
+.b-footer__line {
+  border: 0.5px solid #6c6e7b;
+  width: 100%;
+  margin-bottom: 64px;
+}
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/header/header.scss ***!
+  \****************************************************************************************************************************************************************************************************/
+.b-header__container {
+  display: flex;
+  flex-direction: column;
+}
+.b-header__line {
+  border: 0.5px solid #6c6e7b;
+  width: 100%;
+}
+.b-header__top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.b-header__left-content {
+  margin-top: 40px;
+  margin-bottom: 43px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  width: 390px;
+  height: 74px;
+}
+.b-header__left-content p {
+  margin: auto;
+  text-transform: uppercase;
+  color: #2c145e;
+  letter-spacing: 0.25rem;
+  line-height: 1.3;
+}
+.b-header__logo {
+  width: 93px;
+  height: 66px;
+  margin-right: 24px;
+}
+.b-header__auth-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.b-header__auth-item {
+  padding: 5px 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6c6e7b;
+}
+.b-header__auth-item--user-name {
+  color: #000;
+}
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/left-menu/left-menu.scss ***!
+  \**********************************************************************************************************************************************************************************************************/
+.b-left-menu__line {
+  border: 0.5px solid #6c6e7b;
+  width: 100%;
+}
+.b-left-menu__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.b-left-menu__menu-item {
+  padding: 5px 10px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6c6e7b;
+}
+.b-left-menu__menu-item--selected {
+  color: #000;
+}
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/map/map.scss ***!
+  \**********************************************************************************************************************************************************************************************/
+.b-map__container {
+  height: 50vh;
+  margin-bottom: 20px;
+}
+.b-map__description {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.b-map__marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: red;
+}
+.b-map__popup {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 2px solid #9b407a;
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-banner/news-banner.scss ***!
+  \**************************************************************************************************************************************************************************************************************/
+.b-news-banner {
+  margin-bottom: 20px;
+}
+.b-news-banner__block {
+  width: 100%;
+  height: 646px;
+  line-height: 1.3;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b-news-banner__text {
+  width: 80%;
+}
+.b-news-banner__header {
+  font-size: 64px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.b-news-banner__announce {
+  font-size: 32px;
+  color: #fff;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-breadcrumb/news-breadcrumb.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+.b-news-breadcrumb__container {
+  display: flex;
+  font-size: 16px;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 60px;
+}
+.b-news-breadcrumb__delimeter {
+  color: #bbb;
+}
+.b-news-breadcrumb__element--current {
+  color: #6c6e7b;
+}
+.b-news-breadcrumb__element-link {
+  color: #bbb;
+}
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-detail/news-detail.scss ***!
+  \**************************************************************************************************************************************************************************************************************/
+.b-news-detail__container {
+  display: flex;
+  justify-content: space-between;
+}
+.b-news-detail__info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 48%;
+}
+.b-news-detail__date {
+  display: flex;
+  background-color: #ecf2f5;
+  border-radius: 20px;
+  width: 118px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #6c6e7b;
+  margin-bottom: 40px;
+}
+.b-news-detail__title {
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #841844;
+  line-height: 1.5;
+}
+.b-news-detail__description {
+  flex-grow: 1;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.b-news-detail__description p {
+  margin-bottom: 22px;
+}
+.b-news-detail__themes-container {
+  margin-bottom: 40px;
+}
+.b-news-detail__themes-container * {
+  display: inline;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #6c6e7b;
+}
+.b-news-detail__button-link {
+  width: 283px;
+  height: 54px;
+}
+.b-news-detail__button-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 2px solid #9b407a;
+}
+.b-news-detail__button-text {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #9b407a;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.b-news-detail__button-icon {
+  margin-right: 10px;
+  transform: scale(-1, 1);
+}
+.b-news-detail__image {
+  flex-basis: 48%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-item/news-item.scss ***!
+  \**********************************************************************************************************************************************************************************************************/
+.b-news-item {
+  display: flex;
+}
+.b-news-item__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.b-news-item__container:last-child {
+  justify-self: end;
+}
+.b-news-item__date {
+  display: flex;
+  background-color: #ecf2f5;
+  border-radius: 20px;
+  width: 118px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #6c6e7b;
+  margin-bottom: 30px;
+}
+.b-news-item__title {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+}
+.b-news-item__description {
+  flex-grow: 1;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.b-news-item__button-link {
+  width: 216px;
+  height: 54px;
+}
+.b-news-item__button-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 2px solid #9b407a;
+}
+.b-news-item__button-text {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #9b407a;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-list/news-list.scss ***!
+  \**********************************************************************************************************************************************************************************************************/
+.b-news-list__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.b-news-list__item {
+  display: flex;
+  flex-basis: 48%;
+  margin-bottom: 82px;
+}
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/news-pagination/news-pagination.scss ***!
+  \**********************************************************************************************************************************************************************************************************************/
+.b-news-pagination__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+  justify-self: end;
+  gap: 16px;
+}
+.b-news-pagination__figure {
+  width: 56px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #9b407a;
+  border-radius: 50px;
+}
+.b-news-pagination__figure--arrow {
+  width: 106px;
+  height: 54px;
+}
+.b-news-pagination__number {
+  color: #9b407a;
+  font-weight: 600;
+  font-size: 16px;
+}
+/*!******************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/offices/offices.scss ***!
+  \******************************************************************************************************************************************************************************************************/
+.b-offices__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.b-offices__button {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 50px;
+  border: 2px solid #9b407a;
+  width: 150px;
+  height: 34px;
+}
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/smart-filter/smart-filter.scss ***!
+  \****************************************************************************************************************************************************************************************************************/
+.b-smart-filter__fields-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.b-smart-filter__price-container {
+  width: 400px;
+}
+.b-smart-filter__price-fields {
+  width: 150px;
+}
+.b-smart-filter__buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/title/title.scss ***!
+  \**************************************************************************************************************************************************************************************************/
+.b-title {
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+.b-title__header {
+  font-size: 64px;
+  line-height: 1.4;
+  font-weight: 600;
+  color: black;
+}
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/common/top-menu/top-menu.scss ***!
+  \********************************************************************************************************************************************************************************************************/
+.b-top-menu__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.b-top-menu__menu-item {
+  padding: 5px 10px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #6c6e7b;
+}
+.b-top-menu__menu-item--selected {
+  color: #000;
+}
+
+/*# sourceMappingURL=index.1758279165859.css.map*/

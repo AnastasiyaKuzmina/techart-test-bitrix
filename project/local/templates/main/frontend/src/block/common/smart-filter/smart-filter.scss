@@ -1,0 +1,25 @@
+@use "style" as *;
+
+$block-name: "b-smart-filter";
+
+.#{$block-name} {
+	&__fields-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&__price-container {
+		width: 400px;
+	}
+
+	&__price-fields {
+		width: 150px;
+	}
+
+	&__buttons-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+}

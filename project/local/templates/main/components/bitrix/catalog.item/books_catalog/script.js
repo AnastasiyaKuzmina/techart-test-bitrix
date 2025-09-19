@@ -1,10 +1,10 @@
-console.log("Hello, World!", document.querySelectorAll('.product-item-container').length);
+
 (function (window){
 	'use strict';
 
 	if (window.JCCatalogItem)
 		return;
-	
+
 	var BasketButton = function(params)
 	{
 		BasketButton.superclass.constructor.apply(this, arguments);
@@ -414,7 +414,7 @@ console.log("Hello, World!", document.querySelectorAll('.product-item-container'
 			BX.ready(BX.delegate(this.init,this));
 		}
 	};
-	
+
 	window.JCCatalogItem.prototype = {
 		init: function()
 		{
@@ -428,7 +428,6 @@ console.log("Hello, World!", document.querySelectorAll('.product-item-container'
 			}
 
 			this.obPict = BX(this.visual.PICT_ID);
-			
 			if (!this.obPict)
 			{
 				this.errorCode = -2;
@@ -450,10 +449,10 @@ console.log("Hello, World!", document.querySelectorAll('.product-item-container'
 			this.obPrice = BX(this.visual.PRICE_ID);
 			this.obPriceOld = BX(this.visual.PRICE_OLD_ID);
 			this.obPriceTotal = BX(this.visual.PRICE_TOTAL_ID);
-			// if (!this.obPrice)
-			// {
-			// 	this.errorCode = -16;
-			// }
+			if (!this.obPrice)
+			{
+				this.errorCode = -16;
+			}
 
 			if (this.showQuantity && this.visual.QUANTITY_ID)
 			{
@@ -542,10 +541,9 @@ console.log("Hello, World!", document.querySelectorAll('.product-item-container'
 					this.obSkuProps = BX(this.visual.DISPLAY_PROP_DIV);
 				}
 			}
-			console.log(this.errorCode)
+
 			if (this.errorCode === 0)
 			{
-				
 				// product slider events
 				if (this.isTouchDevice)
 				{
@@ -557,7 +555,6 @@ console.log("Hello, World!", document.querySelectorAll('.product-item-container'
 				{
 					if (this.viewMode === 'CARD')
 					{
-						console.log("FFFFFFF");
 						// product hover events
 						BX.bind(this.obProduct, 'mouseenter', BX.proxy(this.hoverOn, this));
 						BX.bind(this.obProduct, 'mouseleave', BX.proxy(this.hoverOff, this));

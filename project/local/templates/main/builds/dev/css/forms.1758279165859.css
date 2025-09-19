@@ -1,0 +1,113 @@
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-fill-button/forms-fill-button.scss ***!
+  \*************************************************************************************************************************************************************************************************************************/
+.b-forms-fill-button__container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.b-forms-fill-button__field {
+  width: 60%;
+  font-size: 16px;
+  border: 2px solid #9b407a;
+  box-sizing: border-box;
+  background: fixed;
+  width: 100px;
+  height: 34px;
+  border-radius: 50px;
+}
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-fill-checkbox/forms-fill-checkbox.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+.b-forms-fill-checkbox__container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.b-forms-fill-checkbox__text {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #6c6e7b;
+}
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-fill-input/forms-fill-input.scss ***!
+  \***********************************************************************************************************************************************************************************************************************/
+.b-forms-fill-input__container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.b-forms-fill-input__text {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #6c6e7b;
+}
+.b-forms-fill-input__field {
+  width: 60%;
+  font-size: 16px;
+  border: 2px solid #9b407a;
+  box-sizing: border-box;
+  background: fixed;
+  height: 34px;
+  border-radius: 50px;
+  padding: 0 10px;
+}
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-fill-select/forms-fill-select.scss ***!
+  \*************************************************************************************************************************************************************************************************************************/
+.b-forms-fill-select__container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.b-forms-fill-select__text {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #6c6e7b;
+}
+.b-forms-fill-select__field {
+  width: 60%;
+  font-size: 16px;
+  border: 2px solid #9b407a;
+  box-sizing: border-box;
+  background: fixed;
+  height: 34px;
+  border-radius: 50px;
+  padding: 0 10px;
+}
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-fill-textarea/forms-fill-textarea.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+.b-forms-fill-textarea__container {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.b-forms-fill-textarea__text {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #6c6e7b;
+}
+.b-forms-fill-textarea__field {
+  width: 60%;
+  font-size: 16px;
+  border: 2px solid #9b407a;
+  box-sizing: border-box;
+  background: fixed;
+  height: 100px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/block/forms/forms-form/forms-form.scss ***!
+  \***********************************************************************************************************************************************************************************************************/
+.b-forms-form__container {
+  max-width: 800px;
+}
+.b-forms-form__ok-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.b-forms-form__error-messages {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=forms.1758279165859.css.map*/

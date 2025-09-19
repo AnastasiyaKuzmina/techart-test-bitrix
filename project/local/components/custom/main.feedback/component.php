@@ -31,16 +31,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 	{
 		if(empty($arParams["REQUIRED_FIELDS"]) || !in_array("NONE", $arParams["REQUIRED_FIELDS"]))
 		{
-			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["user_name"]) <= 1)
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("NAME", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["NAME"]) <= 1)
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_NAME");
-			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["user_email"]) <= 1)
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["EMAIL"]) <= 1)
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_EMAIL");
-			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("THEME", $arParams["REQUIRED_FIELDS"])) && empty($_POST["theme"]))
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("PHONE", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["PHONE"]) <= 1)
+				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_PHONE");
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("THEME", $arParams["REQUIRED_FIELDS"])) && empty($_POST["THEME"]))
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_THEME");
 			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("MESSAGE", $arParams["REQUIRED_FIELDS"])) && mb_strlen($_POST["MESSAGE"]) <= 3)
 				$arResult["ERROR_MESSAGE"][] = GetMessage("MF_REQ_MESSAGE");
 		}
-		if(mb_strlen($_POST["user_email"]) > 1 && !check_email($_POST["user_email"]))
+		if(mb_strlen($_POST["EMAIL"]) > 1 && !check_email($_POST["EMAIL"]))
 			$arResult["ERROR_MESSAGE"][] = GetMessage("MF_EMAIL_NOT_VALID");
 		if($arParams["USE_CAPTCHA"] == "Y")
 		{
@@ -59,9 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 		if(empty($arResult["ERROR_MESSAGE"]))
 		{
 			$arFields = Array(
-				"AUTHOR" => $_POST["user_name"],
-				"AUTHOR_EMAIL" => $_POST["user_email"],
-				"THEME" => $_POST["theme"],
+				"AUTHOR" => $_POST["NAME"],
+				"AUTHOR_EMAIL" => $_POST["EMAIL"],
+				"THEME" => $_POST["THEME"],
+				"PHONE" => $_POST["PHONE"],
 				"EMAIL_TO" => $arParams["EMAIL_TO"],
 				"TEXT" => $_POST["MESSAGE"],
 			);
@@ -73,17 +76,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 			}
 			else
 				CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
-			$_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
-			$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
+			$_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["NAME"]);
+			$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["EMAIL"]);
 			$event = new \Bitrix\Main\Event('main', 'onFeedbackFormSubmit', $arFields);
 			$event->send();
 			LocalRedirect($APPLICATION->GetCurPageParam("success=".$arResult["PARAMS_HASH"], Array("success")));
 		}
 
 		$arResult["MESSAGE"] = htmlspecialcharsbx($_POST["MESSAGE"]);
-		$arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
-		$arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
-		$arResult["AUTHOR_THEME"] = htmlspecialcharsbx($_POST["theme"]);
+		$arResult["AUTHOR_NAME"] = htmlspecialcharsbx($_POST["NAME"]);
+		$arResult["AUTHOR_EMAIL"] = htmlspecialcharsbx($_POST["EMAIL"]);
+		$arResult["AUTHOR_THEME"] = htmlspecialcharsbx($_POST["THEME"]);
 	}
 	else
 		$arResult["ERROR_MESSAGE"][] = GetMessage("MF_SESS_EXP");

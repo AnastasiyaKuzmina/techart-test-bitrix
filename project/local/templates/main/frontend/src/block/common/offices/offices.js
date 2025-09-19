@@ -2,22 +2,25 @@ var activeOffice = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 	const mapsContainer = document.getElementById('maps-container');
-	activeOffice = mapsContainer.firstElementChild;
-	activeOffice.style.display = "block";
+	
+	if (mapsContainer) {
+		activeOffice = mapsContainer.firstElementChild;
+		activeOffice.style.display = "block";
 
-	var maps = mapsContainer.querySelectorAll('.office-map');
-	initMap(maps);
+		var maps = mapsContainer.querySelectorAll('.office-map');
+		initMap(maps);
 
-	var buttons = document.querySelectorAll('.office-button');
+		var buttons = document.querySelectorAll('.office-button');
 
-	for (const button of buttons) {
-		button.addEventListener("click", () => {
-			var mapId = button.dataset.mapId;
-			var newActiveOffice = mapsContainer.querySelector('#' + mapId);
-			activeOffice.style.display = "none";
-			newActiveOffice.style.display = "block";
-			activeOffice = newActiveOffice;
-		});
+		for (const button of buttons) {
+			button.addEventListener("click", () => {
+				var mapId = button.dataset.mapId;
+				var newActiveOffice = mapsContainer.querySelector('#' + mapId);
+				activeOffice.style.display = "none";
+				newActiveOffice.style.display = "block";
+				activeOffice = newActiveOffice;
+			});
+		}
 	}
 
 	async function initMap(containers) {

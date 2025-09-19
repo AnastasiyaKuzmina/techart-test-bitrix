@@ -14,15 +14,6 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 $this->setFrameMode(true);
-
-if (isset($arParams['USE_COMMON_SETTINGS_BASKET_POPUP']) && $arParams['USE_COMMON_SETTINGS_BASKET_POPUP'] === 'Y')
-{
-	$basketAction = $arParams['COMMON_ADD_TO_BASKET_ACTION'] ?? '';
-}
-else
-{
-	$basketAction = $arParams['SECTION_ADD_TO_BASKET_ACTION'] ?? '';
-}
 ?>
 
 <?

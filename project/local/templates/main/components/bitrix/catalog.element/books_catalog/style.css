@@ -1,5 +1,6 @@
 /* Slider */
 .product-item-detail-slider-container {
+	position: relative;
 	max-width: 100%;
 	background: transparent;
 	transition: background 800ms ease;
@@ -14,8 +15,22 @@
 
 .product-item-detail-slider-block.product-item-detail-slider-block-square { padding-top: 100%; }
 
+.product-item-detail-slider-images-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 .product-item-detail-slider-image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	text-align: center;
+	opacity: 0;
 	transition: opacity 250ms linear;
 }
 
@@ -25,6 +40,9 @@
 }
 
 .product-item-detail-slider-image img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	max-width: 100%;
 	max-height: 100%;
 	width: auto;
@@ -33,6 +51,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	transition: background-size 450ms ease, width 450ms ease, height 450ms ease, outline 450ms ease;
+	transform: translateY(-50%) translateX(-50%);
 }
 
 .product-item-detail-slider-progress-bar {
@@ -195,7 +214,8 @@
 	max-width: 100%;
 	max-height: 90vh;
 	width: auto;
-	cursor: default
+	cursor: default;
+	top: 0;
 }
 
 .product-item-detail-slider-container.popup .product-item-detail-slider-controls-block {
